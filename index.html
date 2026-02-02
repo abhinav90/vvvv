@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Sharvari 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #ffb6c1;
+      --rose: #ff4d6d;
+      --cream: #fff7f0;
+      --gold: #ffd700;
+      --dark: #2b2b2b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #fff0f5, #ffe6ee);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    h1, h2 {
+      font-family: 'Great Vibes', cursive;
+      font-weight: normal;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 18px;
+      animation: floatUp 8s linear infinite;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+    }
+
+    /* Landing */
+    .hero h1 {
+      font-size: 3rem;
+      color: var(--rose);
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 1s;
+    }
+
+    .start-btn {
+      margin-top: 40px;
+      padding: 14px 36px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      border: none;
+      background: linear-gradient(45deg, var(--rose), var(--pink));
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255,77,109,0.6);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    /* Story cards */
+    .card {
+      background: rgba(255,255,255,0.85);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 20px 0;
+      max-width: 600px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.8s ease;
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Question */
+    .question h2 {
+      font-size: 2.8rem;
+      color: var(--rose);
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .yes-btn {
+      padding: 14px 40px;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      border: none;
+      background: linear-gradient(45deg, #ff4d6d, #ff8fab);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(255,77,109,0.7);
+      transition: 0.3s ease;
+    }
+
+    .no-btn {
+      padding: 12px 30px;
+      font-size: 1rem;
+      border-radius: 30px;
+      border: none;
+      background: #ddd;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .tease {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: var(--rose);
+      min-height: 24px;
+    }
+
+    /* Celebration */
+    .celebration {
+      display: none;
+    }
+
+    .celebration h1 {
+      font-size: 3.2rem;
+      color: var(--rose);
+      margin-bottom: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Music button */
+    .music-btn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: white;
+      border-radius: 50%;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7e7e8f8c9f.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Hey Sharvari 💕</h1>
+  <p>I made something special… just for you.</p>
+  <button class="start-btn" onclick="scrollToStory()">Start 💖</button>
+</section>
+
+<!-- Story -->
+<section id="story">
+  <div class="card">Every little moment with you feels special ✨</div>
+  <div class="card">You make my ordinary days feel magical 💫</div>
+  <div class="card">This isn’t just a website… it’s my heart on a screen ❤️</div>
+  <div class="card">And honestly… I can’t imagine this Valentine without you 🌹</div>
+</section>
+
+<!-- Question -->
+<section class="question">
+  <h2>So… I have just one question for you 💗</h2>
+  <h2>Will you be my Valentine? 🌹</h2>
+
+  <div class="buttons">
+    <button class="yes-btn" id="yesBtn">YES 💖</button>
+    <button class="no-btn" id="noBtn">NO 🙈</button>
+  </div>
+
+  <div class="tease" id="tease"></div>
+</section>
+
+<!-- Celebration -->
+<section class="celebration" id="celebration">
+  <h1>YAYYYY!!! 😍</h1>
+  <p>You just made me the happiest person alive 💕</p>
+  <p>Happy Valentine’s Day, Sharvari 🌹</p>
+  <p style="margin-top:20px;">Screenshot this moment… it’s our little memory 💞</p>
+</section>
+
+<script>
+  // Floating hearts
+  setInterval(() => {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerText = '💖';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (16 + Math.random() * 20) + 'px';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 8000);
+  }, 400);
+
+  function scrollToStory() {
+    document.getElementById('story').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Reveal cards on scroll
+  const cards = document.querySelectorAll('.card');
+  window.addEventListener('scroll', () => {
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        card.classList.add('show');
+      }
+    });
+  });
+
+  // Music
+  const music = document.getElementById('music');
+  function toggleMusic() {
+    if (music.paused) music.play();
+    else music.pause();
+  }
+
+  // NO button logic
+  let noCount = 0;
+  const noBtn = document.getElementById('noBtn');
+  const yesBtn = document.getElementById('yesBtn');
+  const tease = document.getElementById('tease');
+
+  const messages = [
+    "Hmm… are you sure? 😏",
+    "I think your heart clicked the wrong button 💖",
+    "Nice try… but love wins 😉"
+  ];
+
+  noBtn.addEventListener('click', () => {
+    noCount++;
+    tease.innerText = messages[noCount % messages.length];
+
+    yesBtn.style.transform = `scale(${1 + noCount * 0.15})`;
+    noBtn.style.transform = `scale(${1 - noCount * 0.15})`;
+
+    noBtn.style.position = 'relative';
+    noBtn.style.left = (Math.random() * 100 - 50) + 'px';
+
+    if (noCount >= 5) {
+      noBtn.style.display = 'none';
+      tease.innerText = "Okay okay… destiny has decided 💍✨";
+    }
+  });
+
+  // YES click
+  yesBtn.addEventListener('click', () => {
+    document.querySelector('.hero').style.display = 'none';
+    document.getElementById('story').style.display = 'none';
+    document.querySelector('.question').style.display = 'none';
+    document.getElementById('celebration').style.display = 'flex';
+  });
+</script>
+
+</body>
+</html>
